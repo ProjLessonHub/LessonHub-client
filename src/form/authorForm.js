@@ -1,20 +1,9 @@
-import React, { FC, useState, ChangeEvent } from 'react'
-import { TextField, MenuItem, FormControlLabel, Switch, Button, InputLabel, FormControl } from '@material-ui/core'
+import React, { useState } from 'react'
+import { TextField, FormControlLabel, Button, } from '@material-ui/core'
 import Modal from './modal'
-import { fade, makeStyles, useTheme, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import { green } from '@material-ui/core/colors'
 import Checkbox from '@material-ui/core/Checkbox'
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-    input: {
-
-    },
-}))
 
 const GreenCheckbox = withStyles({
     root: {
@@ -27,9 +16,7 @@ const GreenCheckbox = withStyles({
 })((props) => <Checkbox color="default" {...props} />)
 
 const AuthorForm = ({ closeModal, handleChange, handleSubmit, lesson }) => {
-    const classes = useStyles()
     const [firsTime, toggleRegister] = useState(false)
-
 
     return (
         <Modal

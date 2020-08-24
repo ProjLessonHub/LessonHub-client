@@ -44,22 +44,14 @@ const AddLesson = ({ closeModal }) => {
     const [docs, setDocs] = useState([])
 
     const fileUpload = (e) => {
-        // if (e.target.files[0]) {
+
         setFile(e.target.files[0] || '')
         setFilename(e.target.files[0]?.name || 'No file attached')
-        // } else {
-        //     setFile('')
-        //     setFilename(e.target.files[0]?.name || 'No file attached')
-        // }
     }
 
     const docsUpload = (e) => {
-        // if (e.target.files[0]) {
         setDocs(prev => [...prev, ...e.target.files] || [])
-        // } else {
-        //     setFile('')
-        //     setFilename(e.target.files[0]?.name || 'No file attached')
-        // }
+
     }
 
     const handleChange = (e) => {
@@ -114,7 +106,6 @@ const AddLesson = ({ closeModal }) => {
             open={true}
             onClose={() => closeModal()}
             title='Add Lesson'
-            // onSubmit={handleSubmit}
             mode='New'>
             <div style={{ width: '550px', height: '600px' }}>
                 <TextField
@@ -134,9 +125,6 @@ const AddLesson = ({ closeModal }) => {
                     name="description"
                     fullWidth
                     required
-
-
-
                 />
                 <TextField
                     select
@@ -173,7 +161,6 @@ const AddLesson = ({ closeModal }) => {
                     onChange={handleChange}
                     fullWidth
                     required
-
                 >
 
                     <MenuItem value='English'>English</MenuItem>
@@ -184,8 +171,6 @@ const AddLesson = ({ closeModal }) => {
                     <MenuItem value='Science'>Science</MenuItem>
                     <MenuItem value='FL'>Foreign Language</MenuItem>
                     <MenuItem value='SS'>Social Science</MenuItem>
-
-
                 </TextField>
 
                 <TextField
@@ -199,7 +184,7 @@ const AddLesson = ({ closeModal }) => {
                     rows={10}
                     multiline
                     style={{
-                        marginTop: '30px', height: '200px', marginBottom: '50px'
+                        marginTop: '30px', height: '200px', marginBottom: '50px',
                     }}
                 />
                 <div style={{ display: 'flex' }}><Button
@@ -235,10 +220,6 @@ const AddLesson = ({ closeModal }) => {
                     Add a document
                 </Button></div>
                 {docs.length > 0 && docs.map(f => <div style={{ alignSelf: 'center' }}>{f.name}</div>)}
-
-
-
-
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', width: '190px', float: 'right' }}>
                 <Button size='small' onClick={() => closeModal()}>Cancel</Button>

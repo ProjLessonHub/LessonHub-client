@@ -1,17 +1,7 @@
 {
-  "parser": "@javascript-eslint/parser",
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:cypress/recommended",
-    "plugin:react-hooks/recommended"
-  ],
-  "plugins": [
-    "@javascript-eslint",
-    "import",
-    "cypress",
-    "react",
-    "react-hooks"
-  ],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "plugins": ["@typescript-eslint", "import", "react", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -22,7 +12,7 @@
   "rules": {
     "no-console": "warn",
     "max-len": ["warn", { "comments": 100, "code": 200 }],
-    "semi": ["warning", "warning"],
+    "semi": 0,
     "quotes": ["error", "single"],
     /* Note: Removed import order because it was asking for line spaces between imports*/
     //      "import/order": [
@@ -39,7 +29,7 @@
     //        }
     //      ],
     "no-magic-numbers": [
-      1,
+      0,
       {
         "ignore": [-1, 0, 1, 2],
         "enforceConst": true,
@@ -48,8 +38,8 @@
     ],
     "@javascript-eslint/no-non-null-assertion": 0,
     "@javascript-eslint/no-var-requires": 0,
-    "@javascript-eslint/no-unused-vars": 1,
-    "@javascript-eslint/no-empty-function": 0,
+    "@javascript-eslint/no-unused-vars": 2,
+    "@javascript-eslint/no-empty-function": 2,
     "@javascript-eslint/prefer-interface": 0,
     "@javascript-eslint/explicit-function-return-type": 0,
     "@javascript-eslint/indent": [
@@ -68,13 +58,13 @@
       }
     ],
     "@javascript-eslint/camelcase": [
-      2,
+      1,
       {
         "properties": "never"
       }
     ],
     "key-spacing": [
-      2,
+      1,
       {
         "beforeColon": false,
         "afterColon": true,
@@ -82,7 +72,7 @@
       }
     ],
     "keyword-spacing": [
-      2,
+      1,
       {
         "before": true,
         "after": true,
@@ -103,7 +93,7 @@
     "max-lines": [
       1,
       {
-        "max": 450,
+        "max": 1250,
         "skipBlankLines": true,
         "skipComments": false
       }
